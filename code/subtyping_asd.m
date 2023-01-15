@@ -1,12 +1,12 @@
 clear;clc;
 
-working_dir = "/path/to/working/folder";
+working_dir = "/home/javi/Documentos/asd-subtyping-enrichment/";
 
 %%% Add functions to the path %%%%
 addpath(genpath(strcat(working_dir, 'code')))
 
 %%%% Load data %%%%%%
-load(strcat(working_dir, "data/cors_combat_both_82regs_motion_aggressive_My21.mat"));
+load(strcat(working_dir, "results/desikan/cors_combat_both_motion_aggressive.mat"));
 
 % subset ASD
 % asd_subset = group==1;
@@ -19,5 +19,5 @@ seed=0;
 
 res_cluster_euclidean = cluster_consensus(CC_combat_asd, 'euclidean', kind, nshuff, gamma, seed);
 
-save(strcat(working_dir, 'data/results_clustering_82regs_motion_aggressive_k_0220_Jun21.mat'),...
+save(strcat(working_dir, 'data/results_clustering_motion_aggressive_k_0220.mat'),...
     'res_cluster_euclidean')
